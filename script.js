@@ -1,7 +1,22 @@
-const element = document.getElementById("button");
-const block = document.getElementsByClassName("block");
-element.addEventListener("click", onclick);
+const button = document.getElementById("button");
+let minblock = 0;
+let maxblock = 10;
+const onclick = button.addEventListener("click",addBlock)
 
-    function onclick() {
-        block.style.removeProperty('none');
+function addBlock(){
+    
+    if (minblock < maxblock){
+        let Newblock = document.createElement("div");
+        Newblock.className= ("block");
+
+        let addtocontainer = document.getElementById("assignment-03");
+        addtocontainer.appendChild(Newblock);
+
+        minblock++;
     }
+    else{
+        alert("Maximum number of blocks reached (10).")
+    }
+   
+}
+
